@@ -10,18 +10,16 @@ on:
 env:
   REPO_NAME1: gh-actions1
 
-  TEST_VAR1: ${{ env.REPO_NAME1 }}
-  TEST_VAR2: ${{ env.TEST_VAR1 }}
-
-  TEST_VAR3: ${{ env.TEST_VAR4 }}
-  TEST_VAR4: ${{ env.REPO_NAME1 }}
-
 jobs:
   Run-echo:
     name: Run echo
     runs-on: ubuntu-latest
     env:
       REPO_NAME2: gh-actions2
+      TEST_VAR1: $REPO_NAME1
+      TEST_VAR2: $TEST_VAR1
+      TEST_VAR3: $TEST_VAR4
+      TEST_VAR4: $REPO_NAME1
     steps:
       - name: Checkout
         uses: actions/checkout@v2
