@@ -35,3 +35,19 @@ jobs:
           echo "${REPO_NAME1}"
           echo "${REPO_NAME2}"
           echo "${REPO_NAME3}"
+      
+      - name: Run A=$
+        env:
+          REPO_NAME3: gh-actions3
+        run: |
+          echo "A=$REPO_NAME1"
+          echo "A=$REPO_NAME2"
+          echo "A=$REPO_NAME3"
+
+      - name: Run A=${}
+        env:
+          REPO_NAME3: gh-actions3
+        run: |
+          echo "A=${REPO_NAME1}"
+          echo "A=${REPO_NAME2}"
+          echo "A=${REPO_NAME3}"
