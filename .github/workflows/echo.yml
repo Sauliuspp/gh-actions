@@ -73,3 +73,9 @@ jobs:
           echo "A=${TEST_VAR2}"
           echo "A=${TEST_VAR3}"
           echo "A=${TEST_VAR4}"
+
+      - name: Add env var to name -> ${REPO_NAME1} ${REPO_NAME2} ${REPO_NAME3}
+        env:
+          REPO_NAME3: gh-actions3
+        run: |
+          echo "random message"
