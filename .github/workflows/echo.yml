@@ -11,7 +11,7 @@ env:
   REPO_NAME1: gh-actions1
 
 jobs:
-  Run echo:
+  Run-echo:
     name: Run echo
     runs-on: ubuntu-latest
     env:
