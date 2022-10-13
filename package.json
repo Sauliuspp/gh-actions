@@ -1,0 +1,21 @@
+{
+  "name": "gh-actions",
+  "version": "1.0.0",
+  "description": "GH actions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sauliuspp/gh-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sauliuspp/gh-actions/issues"
+  },
+  "homepage": "https://github.com/Sauliuspp/gh-actions#readme"
+}
