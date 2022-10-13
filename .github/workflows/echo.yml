@@ -30,7 +30,7 @@ jobs:
         env:
           REPO_NAME3: gh-actions3
         run: |
-          echo "$REPO_NAME1"
+          echo $REPO_NAME1
           echo "$REPO_NAME2"
           echo "$REPO_NAME3"
           echo "$TEST_VAR1"
@@ -42,7 +42,7 @@ jobs:
         env:
           REPO_NAME3: gh-actions3
         run: |
-          echo "${REPO_NAME1}"
+          echo ${REPO_NAME1}
           echo "${REPO_NAME2}"
           echo "${REPO_NAME3}"
           echo "${TEST_VAR1}"
@@ -54,7 +54,7 @@ jobs:
         env:
           REPO_NAME3: gh-actions3
         run: |
-          echo "A=$REPO_NAME1"
+          echo A=$REPO_NAME1
           echo "A=$REPO_NAME2"
           echo "A=$REPO_NAME3"
           echo "A=$TEST_VAR1"
@@ -66,7 +66,7 @@ jobs:
         env:
           REPO_NAME3: gh-actions3
         run: |
-          echo "A=${REPO_NAME1}"
+          echo A=${REPO_NAME1}
           echo "A=${REPO_NAME2}"
           echo "A=${REPO_NAME3}"
           echo "A=${TEST_VAR1}"
