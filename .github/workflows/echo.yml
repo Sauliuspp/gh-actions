@@ -12,7 +12,7 @@ env:
 
   TEST_VAR1: $REPO_NAME1
   TEST_VAR2: $TEST_VAR2
-  
+
   TEST_VAR3: $TEST_VAR4
   TEST_VAR4: $REPO_NAME1
 
@@ -33,6 +33,10 @@ jobs:
           echo "$REPO_NAME1"
           echo "$REPO_NAME2"
           echo "$REPO_NAME3"
+          echo "$TEST_VAR1"
+          echo "$TEST_VAR2"
+          echo "$TEST_VAR3"
+          echo "$TEST_VAR4"
 
       - name: Run ${}
         env:
@@ -41,6 +45,10 @@ jobs:
           echo "${REPO_NAME1}"
           echo "${REPO_NAME2}"
           echo "${REPO_NAME3}"
+          echo "${TEST_VAR1}"
+          echo "${TEST_VAR2}"
+          echo "${TEST_VAR3}"
+          echo "${TEST_VAR4}"
       
       - name: Run A=$
         env:
@@ -49,6 +57,10 @@ jobs:
           echo "A=$REPO_NAME1"
           echo "A=$REPO_NAME2"
           echo "A=$REPO_NAME3"
+          echo "A=$TEST_VAR1"
+          echo "A=$TEST_VAR2"
+          echo "A=$TEST_VAR3"
+          echo "A=$TEST_VAR4"
 
       - name: Run A=${}
         env:
@@ -57,3 +69,7 @@ jobs:
           echo "A=${REPO_NAME1}"
           echo "A=${REPO_NAME2}"
           echo "A=${REPO_NAME3}"
+          echo "A=${TEST_VAR1}"
+          echo "A=${TEST_VAR2}"
+          echo "A=${TEST_VAR3}"
+          echo "A=${TEST_VAR4}"
