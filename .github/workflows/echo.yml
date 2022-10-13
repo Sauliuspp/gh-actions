@@ -10,6 +10,12 @@ on:
 env:
   REPO_NAME1: gh-actions1
 
+  TEST_VAR1: $REPO_NAME1
+  TEST_VAR2: $TEST_VAR2
+  
+  TEST_VAR3: $TEST_VAR4
+  TEST_VAR4: $REPO_NAME1
+
 jobs:
   Run-echo:
     name: Run echo
