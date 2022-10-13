@@ -4,18 +4,22 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
     branches:
-      - 'master'
+      - 'main'
   workflow_dispatch:
 
 env:
   REPO_NAME1: gh-actions1
 
 jobs:
-  Run echo:
+  Run-echo:
     name: Run echo
     runs-on: ubuntu-latest
     env:
       REPO_NAME2: gh-actions2
+      TEST_VAR1: $REPO_NAME1
+      TEST_VAR2: $TEST_VAR1
+      TEST_VAR3: $TEST_VAR4
+      TEST_VAR4: $REPO_NAME1
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,14 +28,52 @@ jobs:
         env:
           REPO_NAME3: gh-actions3
         run: |
-          echo "$REPO_NAME1"
+          echo $REPO_NAME1
           echo "$REPO_NAME2"
           echo "$REPO_NAME3"
+          echo "$TEST_VAR1"
+          echo "$TEST_VAR2"
+          echo "$TEST_VAR3"
+          echo "$TEST_VAR4"
 
       - name: Run ${}
         env:
           REPO_NAME3: gh-actions3
         run: |
-          echo "${REPO_NAME1}"
+          echo ${REPO_NAME1}
           echo "${REPO_NAME2}"
           echo "${REPO_NAME3}"
+          echo "${TEST_VAR1}"
+          echo "${TEST_VAR2}"
+          echo "${TEST_VAR3}"
+          echo "${TEST_VAR4}"
+      
+      - name: Run A=$
+        env:
+          REPO_NAME3: gh-actions3
+        run: |
+          echo A=$REPO_NAME1
+          echo "A=$REPO_NAME2"
+          echo "A=$REPO_NAME3"
+          echo "A=$TEST_VAR1"
+          echo "A=$TEST_VAR2"
+          echo "A=$TEST_VAR3"
+          echo "A=$TEST_VAR4"
+
+      - name: Run A=${}
+        env:
+          REPO_NAME3: gh-actions3
+        run: |
+          echo A=${REPO_NAME1}
+          echo "A=${REPO_NAME2}"
+          echo "A=${REPO_NAME3}"
+          echo "A=${TEST_VAR1}"
+          echo "A=${TEST_VAR2}"
+          echo "A=${TEST_VAR3}"
+          echo "A=${TEST_VAR4}"
+
+      - name: Add env var to name -> ${REPO_NAME1} ${REPO_NAME2} ${REPO_NAME3}
+        env:
+          REPO_NAME3: gh-actions3
+        run: |
+          echo "random message"
